@@ -1,0 +1,61 @@
+{
+    "type": "object",
+    "properties": {
+        "resourceGroupName": {
+            "required": true,
+            "type": "string"
+        },
+        "serviceName": {
+            "required": true,
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 50,
+            "pattern": "^[a-zA-Z](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?$"
+        },
+        "opid": {
+            "required": true,
+            "type": "string",
+            "maxLength": 256,
+            "pattern": "^[^*#&+:<>?]+$"
+        },
+        "subscriptionId": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "Parameters supplied to the Update OpenID Connect Provider operation.",
+            "properties": {
+                "clientId": {
+                    "description": "Client ID of developer console which is the client application.",
+                    "type": "string"
+                },
+                "clientSecret": {
+                    "description": "Client Secret of developer console which is the client application.",
+                    "type": "string"
+                },
+                "description": {
+                    "description": "User-friendly description of OpenID Connect Provider.",
+                    "type": "string"
+                },
+                "metadataEndpoint": {
+                    "description": "Metadata endpoint URI.",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "User-friendly OpenID Connect Provider name.",
+                    "maxLength": 50,
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "If_Match": {
+            "required": true,
+            "type": "string"
+        },
+        "api_version": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}
